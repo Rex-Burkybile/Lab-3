@@ -28,13 +28,15 @@ public class PaintJobEstimator {
         String priceOfPaintPerGallonAsString = JOptionPane.showInputDialog("Price of paint per gallon");
         float priceOfPaintPerGallonAsFloat = Float.parseFloat(priceOfPaintPerGallonAsString);
         
+        calculations(amountOfRoomsAsFloat,priceOfPaintPerGallonAsFloat);
         
     }
 public static void calculations(float amountOfRoomsAsFloat, float priceOfPaintPerGallonAsFloat ) {
     
+        
     float totalSquareFeet = 0;
-    for(float i = 0; i <= amountOfRoomsAsFloat; i++) {
-        JOptionPane.showMessageDialog(null, "How many square feet are there in each wall in room" + i + "?");
+    for(int i = 1; i <= amountOfRoomsAsFloat; i++) {
+        JOptionPane.showMessageDialog(null, "How many square feet are there in each wall in room " + i + "?");
         String squareFeetPerRoomAsString = JOptionPane.showInputDialog("number of square feet");
         Float squareFeetPerRoomAsFloat =  Float.parseFloat(squareFeetPerRoomAsString);
         squareFeetPerRoomAsFloat = squareFeetPerRoomAsFloat *4;
@@ -48,6 +50,7 @@ public static void calculations(float amountOfRoomsAsFloat, float priceOfPaintPe
     float laborCharges = hoursOfLabor * 18.00F;
     float totalCost = costOfPaint + laborCharges;
     
+    results(gallonsOfPaint,costOfPaint,hoursOfLabor,laborCharges,totalCost);
 }
 
 public static void results (float gallonsOfPaint,float costOfPaint,float hoursOfLabor,float laborCharges,float totalCost ){
